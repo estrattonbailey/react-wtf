@@ -36,8 +36,6 @@ export default class Outer extends React.Component {
   clamp(val){
     let _val
 
-    console.log(val)
-
     if (val >= 0 && val <= this.state.slides.length){
       _val = val 
     } else if (val >= this.state.slides.length){

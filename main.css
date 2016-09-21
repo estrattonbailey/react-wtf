@@ -398,6 +398,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   @media (min-width: 50em) {
     :root {
       font-size: 100%; } }
+  @media (min-width: 87.5em) {
+    :root {
+      font-size: 200%; } }
 
 .tsx {
   font-size: 1rem; }

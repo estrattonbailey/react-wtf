@@ -1,19 +1,30 @@
 import React, { PropTypes, Children } from 'react'
 import Outer from './outer'
 import Slide from './slide'
-import H from './elements/heading'
 import Pre from './elements/pre'
+import {
+  Color1
+} from './elements'
 
 export default props => {
   return (
     <Outer>
 
       <Slide>
-        <h1>What is React?</h1>
+        <h1>what is React?</h1>
       </Slide>
 
       <Slide>
-        <h3>hint: <span className='c1'>javascript</span></h3>
+        <h3>easy: <Color1>it's javascript</Color1></h3>
+      </Slide>
+      
+      <Slide>
+        <h3>things React is not:</h3>
+        <ul>
+          <li>the savior of the free world</li>
+          <li>opinionated</li>
+          <li>a <Color1>framework</Color1></li>
+        </ul>
       </Slide>
 
       <Slide>
