@@ -37,7 +37,7 @@ class Gif extends React.Component {
 
     return (
       <section className={c}>
-        <img className='loader' src="gifs/loading-bars.svg"/>
+        <img className='loader' src="loading-bars.svg"/>
         <div className='absolute fit-x' style={
           { backgroundImage: `url(${this.state.gif})` }}/>
       </section>
