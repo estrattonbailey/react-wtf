@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 export default ({ children, active, centered, valign }) => {
   return (
-    <section className='slide flex flex-wrap flex-items-center'>
+    <section className='super slide flex flex-wrap flex-items-center'>
       {children}
     </section>
   )

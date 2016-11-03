@@ -1,83 +1,22 @@
-import React, { PropTypes, Children } from 'react'
+import React from 'react'
+
+import Deck from './deck'
 import Slide from './slide'
 import Gif from './gif'
-
 import C from '../elements/colors'
-
-class Outer extends React.Component {
-  constructor(props){
-    super(props)
-
-    const active = parseInt(localStorage.getItem('activeIndex')) || 0
-
-    const slides = Children.toArray(this.props.children)
-
-    this.state = {
-      slides: slides,
-      index: active,
-      size: slides.length - 1
-    }
-
-    window.addEventListener("keydown", this.keyPress.bind(this));
-  }
-
-  keyPress(e){
-    if (
-      event.keyCode === 37 
-      || event.keyCode === 33 
-      || (event.keyCode === 32 && event.shiftKey)
-    ){
-      this.prevSlide();
-    } 
-    else if (
-      event.keyCode === 39 
-      || event.keyCode === 34 
-      || (event.keyCode === 32 && !event.shiftKey)
-    ) {
-      this.nextSlide();
-    }
-  }
-
-  prevSlide(){
-    this.setState({
-      index: Math.max(--this.state.index, 0)
-    })
-  }
-
-  nextSlide(){
-    this.setState({
-      index: Math.min(++this.state.index, this.state.size)
-    })
-  }
-
-  componentWillUpdate(props, state){
-    localStorage.setItem('activeIndex', state.index)
-  }
-
-  render(){
-    return (
-      <div className='slideshow'>
-        <div className='container--m mha w1'>
-          <span className='counter h4'>{this.state.index}</span>
-          {this.state.slides[this.state.index]}
-        </div>
-      </div>
-    )
-  }
-}
 
 export default props => {
   return (
-    <Outer>
+    <Deck>
       <Slide>
         <h1><C blue>vim</C> lol</h1>
       </Slide>
       <Slide>
         <h1>what is vim?</h1>
       </Slide>
-      <Gif src='bubbles'>
-        <h1><C blue>vim</C> lol</h1>
-      </Gif>
+
+      <Gif src='bubbles'/>
+
       <Slide>
         <h3>it's a text editor</h3>
       </Slide>
@@ -95,22 +34,9 @@ export default props => {
           <li>spend less time coding</li>
         </ul>
       </Slide>
-      <Gif src='bros'>
-        <h1><C blue>vim</C> lol</h1>
-      </Gif>
-      <Slide>
-        <h1><C blue>1.</C> Movement</h1>
-      </Slide>
-      <Slide>
-        <ul className='h3'>
-          <li>h - left</li>
-          <li>j - down</li>
-          <li>k - up</li>
-          <li>l - right</li>
-          <li>e - end of word</li>
-          <li>b - beginning of word</li>
-        </ul>
-      </Slide>
+
+      <Gif src='bros'/>
+
       <Slide>
         <h1><C blue>2.</C> Modes</h1>
       </Slide>
@@ -140,7 +66,23 @@ export default props => {
           </ul>
         </div>
       </Slide>
-      
+
+      <Slide>
+        <h1><C blue>1.</C> Movement</h1>
+      </Slide>
+      <Slide>
+        <ul className='h3'>
+          <li>h - left</li>
+          <li>j - down</li>
+          <li>k - up</li>
+          <li>l - right</li>
+          <li>e - end of word</li>
+          <li>b - beginning of word</li>
+          <li>gg - go to top of file</li>
+          <li>G - go to bottom of file</li>
+        </ul>
+      </Slide>
+
       <Slide>
         <h1><C blue>3.</C> Editing a File</h1>
       </Slide>
@@ -156,7 +98,18 @@ export default props => {
             <li>y - yank (copy) text</li>
             <li>p - paste text</li>
           </ul>
-          <div className='h5'><C blue>usually yanks to register, but who needs that?</C></div>
+          <div className='h5'><C blue>usually yanks to register...</C></div>
+        </div>
+      </Slide>
+      <Slide>
+        <div className='w1'>
+          <div className='h3'><C blue>Using registers</C></div>
+          <ul className='h3'>
+            <li>{'"<register>[y|p]'}</li>
+            <li>example: {'"ay'} - yanks to "a" register</li>
+            <li>example: {'"*y'} - yanks to "*" register (system clipboard)</li>
+            <li>example: {'"ap'} - pastes from "a" register</li>
+          </ul>
         </div>
       </Slide>
       <Slide>
@@ -182,9 +135,11 @@ export default props => {
       <Slide>
         <ul className='h3'>
           <li>/ - begin search</li>
+          <li>// - clear search (:noh)</li>
           <li>n - next instance of search term</li>
           <li>N - previous instance of search term</li>
           <li>* - highlight other instances of word under cursor</li>
+          <li>/+{'<up arrow>'} - move through previous searches</li>
         </ul>
       </Slide>
       <Slide>
@@ -221,6 +176,7 @@ export default props => {
           <li>H - move cursor to top of window</li>
           <li>L - move cursor to bottom of window</li>
           <li>Ctrl+o - go to previous location</li>
+          <li>Ctrl+i - go to next location</li>
         </ul>
       </Slide>
 
@@ -247,6 +203,11 @@ export default props => {
           <li>vv - create vertical split</li>
           <li>ss - create horizontal split</li>
           <li>Ctrl+w+{'[hjkl]'} - navigate between splits</li>
+        </ul>
+      </Slide>
+      <Slide>
+        <ul className='h3'>
+          <li>,js - enter fuzzy finder</li>
         </ul>
       </Slide>
 
@@ -279,6 +240,6 @@ export default props => {
         <h1><C blue>just keep vimming 😆</C></h1>
       </Slide>
       <Gif src='thunder'/>
-    </Outer>
+    </Deck>
   )
 }

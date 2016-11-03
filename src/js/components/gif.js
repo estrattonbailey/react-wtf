@@ -8,26 +8,35 @@ class Gif extends React.Component {
     this.state = {
       raw: `https://s3.amazonaws.com/barreldev/vim-lol/${this.props.src}.gif`,
       gif: false,
-      visible: false
+      visible: false,
+      mounted: false
     }
   }
 
   componentDidMount(){
     const burner = document.createElement('img');
 
+    this.setState({
+      mounted: true
+    })
+
     burner.onload = e => {
-      this.setState({
-        gif: e.target.src
-      })
+      if (!this.state.mounted) return
+
+      this.setState({ gif: e.target.src })
 
       setTimeout(() => {
-        this.setState({
-          visible: true
-        })
+        this.setState({ visible: true })
       }, 0)
     }
 
     burner.src = this.state.raw
+  }
+
+  componentWillUnmount(){
+    this.setState({
+      mounted: false
+    })
   }
 
   render(){
