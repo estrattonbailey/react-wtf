@@ -1,5 +1,6 @@
 import React, { PropTypes, Children } from 'react'
 import Slide from './slide'
+import Gif from './gif'
 
 import C from '../elements/colors'
 
@@ -74,6 +75,9 @@ export default props => {
       <Slide>
         <h1>what is vim?</h1>
       </Slide>
+      <Gif src='bubbles'>
+        <h1><C blue>vim</C> lol</h1>
+      </Gif>
       <Slide>
         <h3>it's a text editor</h3>
       </Slide>
@@ -91,6 +95,9 @@ export default props => {
           <li>spend less time coding</li>
         </ul>
       </Slide>
+      <Gif src='bros'>
+        <h1><C blue>vim</C> lol</h1>
+      </Gif>
       <Slide>
         <h1><C blue>1.</C> Movement</h1>
       </Slide>
@@ -167,6 +174,8 @@ export default props => {
         </ul>
       </Slide>
 
+      <Gif src='groove'/>
+
       <Slide>
         <h1><C blue>4.</C> Searching</h1>
       </Slide>
@@ -191,6 +200,7 @@ export default props => {
       <Slide>
         <h1><C blue>5.</C> Whoops</h1>
       </Slide>
+      <Gif src='farley'/>
       <Slide>
         <ul className='h3'>
           <li>u - undo</li>
@@ -213,6 +223,8 @@ export default props => {
           <li>Ctrl+o - go to previous location</li>
         </ul>
       </Slide>
+
+      <Gif src='prince'/>
 
       <Slide>
         <h1><C blue>7.</C> Developing Stuff</h1>
@@ -248,6 +260,8 @@ export default props => {
         </ul>
       </Slide>
 
+      <Gif src='werk'/>
+
       <Slide>
         <h1><C blue>8.</C> Resources</h1>
       </Slide>
@@ -264,6 +278,7 @@ export default props => {
       <Slide>
         <h1><C blue>just keep vimming 😆</C></h1>
       </Slide>
+      <Gif src='thunder'/>
     </Outer>
   )
 }

@@ -964,13 +964,20 @@ th {
   padding-left: 2em;
   padding-right: 2em; }
 
-#root {
-  padding-left: 2rem;
-  padding-right: 2rem; }
-
 .slide {
   min-height: 100vh;
-  padding: 5em 0; }
+  padding: 5em 2em; }
+
+.gif div {
+  opacity: 0;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.gif.is-active div {
+  opacity: 1; }
 
 .counter {
   position: absolute;
@@ -986,4 +993,11 @@ th {
 
 a {
   color: #00C9FC; }
+
+img {
+  width: 100%;
+  max-width: 700px; }
+
+.loader {
+  width: 40px; }
 
