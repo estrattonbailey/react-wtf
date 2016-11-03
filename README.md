@@ -1,1 +1,1 @@
-am I even qualified do present this
+am I even qualified to present this
