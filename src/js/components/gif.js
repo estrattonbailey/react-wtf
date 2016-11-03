@@ -6,7 +6,7 @@ class Gif extends React.Component {
     super(props)
 
     this.state = {
-      raw: `gifs/${this.props.src}.gif`,
+      raw: `https://s3.amazonaws.com/barreldev/vim-lol/${this.props.src}.gif`,
       gif: false,
       visible: false
     }
