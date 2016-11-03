@@ -20,6 +20,25 @@
   padding-left: 2rem;  
   padding-right: 2rem;  
 }
-.slideshow {
+
+.slide {
   min-height: 100vh;
+  padding: 5em 0;
+}
+
+.counter {
+  position: absolute;
+  top: 2em; 
+  right: 2em;
+  color: $c1;
+  width: 2em;
+  height: 2em;
+  border-radius: 100px;
+  border: 2px solid $c1;
+  line-height: 2em;
+  text-align: center;
+}
+
+a {
+  color: $c1;
 }
