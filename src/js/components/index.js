@@ -14,7 +14,7 @@ export default props => {
         <h1><C blue>React</C> wtf</h1>
       </Slide>
       <Slide>
-        <h1><C blue>1.</C> What is React</h1>
+        <h1><C blue>1</C> What is React</h1>
       </Slide>
       <Slide>
         <h3>React is a functional javascript library for building <C blue>interfaces for the web.</C></h3>
@@ -61,7 +61,7 @@ export default props => {
       </Slide>
 
       <Slide>
-        <h1><C blue>2.</C> Why React?</h1>
+        <h1><C blue>2</C> Why React?</h1>
       </Slide>
       <Slide>
         <div>
@@ -190,16 +190,17 @@ export default props => {
           That way, your whole page is re-rendered every time application state updates.
         </h4>
       </Slide>
+      <Gif src='fam'/>
 
       <Slide>
-        <h1><C blue>3.</C> So wtf is React</h1>
+        <h1><C blue>3</C> So wtf is React</h1>
       </Slide>
       <Gif src='alan'/>
       <Slide>
         <h2>React 👏 is 👏 just 👏 functions 👏 that 👏 return 👏 markup </h2>
       </Slide>
       <Slide>
-        <h2><C blue>3.1</C> State Functional Components</h2>
+        <h2><C blue>3.1</C> Stateless Functional Components</h2>
       </Slide>
       <Slide>
         <Pre>
@@ -214,13 +215,14 @@ const H1 = props => {
 }
 
 /* ES5 equiv
- var H1 = function(props){
+var H1 = function(props){
   return (
     <h1 style={{color: 'blue'}}>
       {props.title}
     </h1
   )
 }
+*/
 `
           }
         </Pre>
